@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <title>Portfolio Practice</title>
+</head>
+<body onload="clearAppear()">
+    <aside>
+        <div>
+            <figure>
+                <button class="menu-button">
+                    <i class="fas fa-bars fa-2x"></i>
+                </button>
+                <nav id="nav">                 
+                    <div id="avatar"></div>
+                    <figcaption>Al . G</figcaption>
+                    <ul>
+                        <li><button class="nav-button" onclick="scrollToHome()">Home</button></li>
+                        <li><button class="nav-button" onclick="scrollToAbout()">About Me</button></li>
+                        <li><button class="nav-button" onclick="scrollToPortfolio()">Portfolio</button></li>
+                        <li><button class="nav-button" onclick="scrollToContact()">Contact</button></li>
+                    </ul>
+                </nav>
+            </figure>
+        </div>
+    </aside>
+
+    <main>
+        <header class="home appear" id="home" >
+            <h1>AL.G</h1>
+            <h2>Web Developer</h2>
+        </header>
+
+        <section class="about-me">
+            <h3 class="about-me-header">I'm Alfredo, A Web Developer</h3>   
+
+            <div class="about-me-content">
+                <p style="line-height: 1.5rem;"> I am from Sunny Los Angeles, CA. I have always been interested in the arts, no matter the medium. I am also equally interested in the development of sites and anything computer related. Growing up, I believed that these two subjects were polar opposites. Although with time, I understood that you can bring both concepts together. Which peaked my interest in Web design. Web design helps me put my artistic touch on a web based meduim for the public to see.</p> 
+                <br>
+                <br>
+                <p>
+                    Let me help you create something wonderful.
+                    <a onclick="scrollToContact()">Contact me</a>
+                </p>
+            </div>
+            <div class="about-me-content">
+            <p>Check out some tunes that helped me this past year. Cheers!!</p>
+            <br>
+            <iframe src="https://open.spotify.com/embed/user/gordoisfat/playlist/3lA7CJtmZPiW5mMtDXzwsP" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            </div>
+        </section>
+
+        <section class="portfolio">
+            <h3 class="portfolio-header">Portfolio</h3>
+                <div class="row">
+                    <div class="column">
+                        <div class="card">
+                            <h3>Project 1</h3>
+                            <p>Some text</p>
+                            <p>Some text</p>
+                        </div>
+                    </div>
+                    <div class="column">
+                            <div class="card">
+                              <h3>Project 2</h3>
+                              <p>Some text</p>
+                              <p>Some text</p>
+                            </div>
+                    </div>
+                    <div class="column">
+                            <div class="card">
+                              <h3>Project 3</h3>
+                              <p>Some text</p>
+                              <p>Some text</p>
+                            </div>
+                          </div>
+                </div>
+        </section>
+    
+        <section id="contact-me" class="contact-me bg-change">
+            <h3 class="contact-header">Contact</h3>
+            <p>Freelance work? No prob, Just contact me @<a href="mailto:alfredoadonis3@gmail.com">AlfredoAdonis3@gmail.com</a>.<br>You can always message me to say hello and chat it up, Id love to talk about Dev and Music suggestions. </p>
+
+            <p>Dont feel obligated to reach out to me over email!! If you prefer it, you may reach out via any social media platform I am found on.</p>
+
+            <p>Thanks for visiting!</p>
+            
+            <i class="fab fa-spotify"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-github-square"></i>
+
+        </section>
+    </main>
+
+    <script>
+        // Grab elements
+        const nav = document.querySelector('#nav');
+        const menuButton = document.querySelector('.menu-button');
+        const aboutMeSection = document.querySelector('.about-me');
+        const homeSection = document.querySelector('.home');
+        const portfolioSection = document.querySelector('.portfolio');
+        const contactSection = document.querySelector('.contact-me');
+
+        // Menu button functions
+        const closeMenu = () => {
+            nav.classList.remove('active');
+            menuButton.classList.remove('clicked');
+        };
+
+
+        const openMenu = () => {
+            nav.classList.add('active');
+            menuButton.classList.add('clicked');
+        };
+
+        const addAppear = (elem) => {
+            elem.classList.add('appear');
+        };
+
+        const removeAppear = (elem) => {
+            elem.classList.remove('appear');
+        };
+
+        const clearAppear = () => {
+            setTimeout(() => {
+                const elems = document.querySelectorAll('.appear');
+                elems.forEach(elem => { 
+                    removeAppear(elem); 
+                });
+            }, 2500);
+        };
+
+        const handleAppear = (elem) => {
+            addAppear(elem);
+            clearAppear();
+        };
+
+        // Default clicked value
+        let clicked = false;
+
+        // handle clicks
+
+        // Menu Button
+        menuButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            const clicked = !nav.classList.contains('active');
+            if (clicked) openMenu();
+            else closeMenu();
+        });
+        // scrolls home 
+        const scrollToHome = () => {
+            closeMenu();
+            homeSection.scrollIntoView();
+            handleAppear(homeSection);
+        }
+
+        // scrolls to About Me 
+        const scrollToAbout = () => {
+            closeMenu();
+            aboutMeSection.scrollIntoView();
+            handleAppear(aboutMeSection);
+        };
+        const scrollToPortfolio = () => {
+            closeMenu();
+            portfolioSection.scrollIntoView();
+            handleAppear(portfolioSection);
+        };
+        const scrollToContact = () => {
+            closeMenu();
+            contactSection.scrollIntoView();
+            handleAppear(contactSection);
+        };
+        
+
+    </script>
+</body>
+</html>
