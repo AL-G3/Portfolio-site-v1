@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
+aside {
+    color: #fafdf6;
+    grid-template-columns: auto 40px;
+    padding: 2em;
+}
+
 body { 
     background-image: linear-gradient(to top, rgb(241, 243, 245) 30%, rgba(198, 131, 131, 0.8)), url(https://i.ytimg.com/vi/8xaOOEWGUd8/maxresdefault.jpg);
     background-repeat: no-repeat;
@@ -11,11 +17,16 @@ body {
     padding: 0;
     font-family: Montserrat, Arial, Helvetica, sans-serif;
 }
-aside {
-    color: #fafdf6;
-    grid-template-columns: auto 40px;
-    padding: 2em;
+
+button {
+    background-color: rgba(0, 0, 0, .01);
+    border: none;
+    position: relative;
+    display: flex;
+        justify-content: flex-end;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
 }
+
 i {
     cursor: pointer;
 }
@@ -28,14 +39,7 @@ figcaption {
     padding: 1rem;
     text-align: center;
 }
-button {
-    background-color: rgba(0, 0, 0, .01);
-    border: none;
-    position: relative;
-    display: flex;
-        justify-content: flex-end;
-    font-family: Montserrat, Arial, Helvetica, sans-serif;
-}
+
 nav { 
     background: #001011;
     box-shadow: 1px 3px 11px rgba(0, 0, 0, 0.21);
