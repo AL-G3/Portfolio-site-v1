@@ -56,14 +56,11 @@ button {
     text-align: center;
     background-color: var(--black);
     color: var(--white);
+    max-width: 300px;
 }
 
 .column {
-    padding-bottom: 10px;
-}
-
-.column::after {
-    padding: 10%;
+    margin-bottom: 10px;
 }
 
 figure {
@@ -151,11 +148,18 @@ nav.active {
     font-size: var(--pfont);
 }
 
-.p{
-  )  margin: 0 auto;
+.p {
+    margin: 0 auto;
     width: 100%;
     max-width: 350px;
 
+}
+
+.portfolio-header {
+    display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
 }
 
 .row::after {
