@@ -2,7 +2,9 @@
 :root {
     --white: #fafdf6;
     --black: #001011;
-    --basefont: 18px; 
+    --basefont: 14px;
+    --pfont: calc(1rem + .25vw);
+    --tfont: calc(2rem + .25vw); 
 }
 
 a { 
@@ -52,7 +54,7 @@ button {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.568);
     padding: 16px;
     text-align: center;
-    background-color: #001011f8;
+    background-color: var(--black);
     color: var(--white);
 }
 
@@ -69,7 +71,7 @@ figure {
 }
 
 figcaption {
-    font-size: 1.3em;
+    font-size: calc(var(--basefont) + 2vw);
     font-weight: bold;
     padding: 1rem;
     text-align: center;
@@ -129,12 +131,13 @@ nav {
     transform: translateX(-100%);
     position: fixed;
     transition: all .2s linear;
-    right: 50%;
+    right: 70%;
     left: 0;
     top: 0;
     height: 100%;
 
 }
+
 nav.active {
     opacity: 1;
     transform: translateX(0%);
@@ -145,10 +148,11 @@ nav.active {
     color: var(--white);
     border: 1px solid transparent;
     padding: 0.5rem 1rem;
+    font-size: var(--pfont);
 }
 
-.row {
-    margin: 0 auto;
+.p{
+  )  margin: 0 auto;
     width: 100%;
     max-width: 350px;
 
@@ -160,8 +164,8 @@ nav.active {
     clear: both;
   }
 
-
 ul {
+    text-align:center;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -169,10 +173,6 @@ ul {
 
 ul li {
     width: 100%;
-}
-
-ul {
-    text-align:center;
 }
 
 .about-me, .portfolio, .contact-me {
