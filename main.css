@@ -2,9 +2,10 @@
 :root {
     --white: #fafdf6;
     --black: #001011;
-    --basefont: 14px;
-    --pfont: calc(1rem + .25vw);
-    --tfont: calc(2rem + .25vw); 
+    --smallfont: calc(1rem + .25vw);
+    --medfont: calc(1.75rem + .35vw);
+    --bigfont: calc(3rem + .25vw);
+    --lrgfont: calc(8rem + .30vw);
 }
 
 a { 
@@ -15,7 +16,6 @@ a {
 .about-me-content {
     margin: auto;
     padding: 0 1.25rem 1.25rem 1.25rem;
-    font-size: 1rem;
     text-align: start; 
 }
 
@@ -35,7 +35,7 @@ body {
     background-size: cover;
     background-position: top center;
     background-attachment: fixed;
-    font-size: calc(18px + 0.25vw);
+    font-size: var(--smallfont);
     margin: 0;
     padding: 0;
     font-family: Montserrat, Arial, Helvetica, sans-serif;
@@ -56,7 +56,9 @@ button {
     text-align: center;
     background-color: var(--black);
     color: var(--white);
+    margin: 1rem;
     max-width: 300px;
+    width: 100%;
 }
 
 .column {
@@ -68,7 +70,7 @@ figure {
 }
 
 figcaption {
-    font-size: calc(var(--basefont) + 2vw);
+    font-size: var(--medfont);
     font-weight: bold;
     padding: 1rem;
     text-align: center;
@@ -88,11 +90,11 @@ h1, h2 {
         align-items: center;
         flex-direction: column;
         justify-content: center;
-    min-height: 100vh;
+    min-height: 90vh;
 }
 
 h1 {
-    font-size: 8rem;
+    font-size: var(--lrgfont);
 }
 
 i {
@@ -128,7 +130,7 @@ nav {
     transform: translateX(-100%);
     position: fixed;
     transition: all .2s linear;
-    right: 70%;
+    right: 60%;
     left: 0;
     top: 0;
     height: 100%;
@@ -145,7 +147,7 @@ nav.active {
     color: var(--white);
     border: 1px solid transparent;
     padding: 0.5rem 1rem;
-    font-size: var(--pfont);
+    font-size: var(--smallfont);
 }
 
 .p {
@@ -155,11 +157,14 @@ nav.active {
 
 }
 
-.portfolio-header {
+.portfolio {
     display: flex;
         align-items: center;
-        justify-content: center;
         flex-direction: column;
+}
+
+.portfolio-header {
+    width: 100%;
 }
 
 .row::after {
@@ -180,12 +185,12 @@ ul li {
 }
 
 .about-me, .portfolio, .contact-me {
-    
     text-align: center;
+    margin: auto;
+    max-width: calc(40rem + .25vw);
 }
 
 /* temporary */
-.home,
 .about-me,
 .portfolio,
 .contact-me { 
@@ -198,7 +203,7 @@ ul li {
 } */
 
 .about-me-header, .portfolio-header, .contact-header {
-    font-size: calc(3em + .25VW);
+    font-size: var(--bigfont);
     font-weight: bold;
     padding: 0 1rem;
 }
@@ -211,6 +216,7 @@ ul li {
     height: 4px;
     margin: 3rem auto 0rem auto;
     width: 100%;
+    max-width: 600px;
 }
 
 /* @keyframes bg-change {
@@ -228,8 +234,5 @@ ul li {
 }
 
 @media screen and (min-width: 600px) {
-    /* button {
-        display: none;
-    } */
 
 }
